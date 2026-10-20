@@ -1,0 +1,426 @@
+
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>For Minh Trâm ♡ 20.10</title>
+
+<style>
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400;1,500&display=swap');
+
+:root {
+  --bg: #080d20;
+  --blue: #a8c8ff;
+  --white: #f3f5ff;
+  --muted: #a8b3d0;
+}
+
+* { box-sizing: border-box; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  margin: 0;
+  background:
+    radial-gradient(ellipse at 50% 0%, #24365f 0%, transparent 55%),
+    linear-gradient(180deg, #080d20, #101a35 55%, #080d20);
+  color: var(--white);
+  font-family: 'DM Sans', sans-serif;
+  overflow-x: hidden;
+}
+
+#stars {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 0;
+  overflow: hidden;
+}
+
+.star {
+  position: absolute;
+  background: white;
+  border-radius: 50%;
+  animation: twinkle 3s infinite ease-in-out;
+}
+
+@keyframes twinkle {
+  0%,100% { opacity: .2; transform: scale(.7); }
+  50% { opacity: 1; transform: scale(1.3); }
+}
+
+main {
+  position: relative;
+  z-index: 1;
+  width: min(850px, 100%);
+  margin: auto;
+  padding: 28px 20px 70px;
+}
+
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 12px;
+  letter-spacing: 2px;
+  color: var(--muted);
+}
+
+nav .brand { color: var(--blue); }
+
+.hero {
+  min-height: 83vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 55px 0;
+}
+
+.moon {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #fff, #c6d8ff 65%, #8ea8df);
+  box-shadow: 0 0 35px #b8d0ff70, 0 0 100px #7e9edb35;
+  margin-bottom: 35px;
+  animation: float 5s ease-in-out infinite;
+}
+
+@keyframes float {
+  0%,100% { transform: translateY(0); }
+  50% { transform: translateY(-12px); }
+}
+
+.eyebrow {
+  color: var(--blue);
+  font-size: 11px;
+  letter-spacing: 4px;
+  text-transform: uppercase;
+}
+
+h1, h2, h3 {
+  font-family: 'Playfair Display', serif;
+  font-weight: 400;
+}
+
+h1 {
+  font-size: clamp(42px, 9vw, 76px);
+  line-height: 1.1;
+  margin: 20px 0;
+}
+
+h1 em {
+  color: var(--blue);
+  font-weight: 400;
+}
+
+.subtitle {
+  color: var(--muted);
+  line-height: 1.9;
+  font-size: 14px;
+  max-width: 450px;
+}
+
+.btn {
+  border: 1px solid #b7ceff65;
+  background: #c4d8ff12;
+  color: var(--white);
+  padding: 14px 22px;
+  border-radius: 30px;
+  cursor: pointer;
+  font: inherit;
+  font-size: 13px;
+  text-decoration: none;
+  display: inline-block;
+  transition: .3s;
+}
+
+.btn:hover {
+  background: #c4d8ff28;
+  transform: translateY(-2px);
+}
+
+.primary {
+  background: #c4d8ff;
+  color: #10182e;
+  border-color: #c4d8ff;
+}
+
+.card {
+  border: 1px solid #c1d2ff24;
+  border-radius: 22px;
+  padding: clamp(22px, 5vw, 38px);
+  background: linear-gradient(135deg, #ffffff0c, #ffffff04);
+  backdrop-filter: blur(12px);
+  margin: 25px 0;
+  box-shadow: 0 20px 70px #00000012;
+}
+
+.section-label {
+  color: var(--blue);
+  font-size: 11px;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+}
+
+h2 {
+  font-size: clamp(28px, 5vw, 38px);
+  margin: 13px 0 18px;
+}
+
+.letter {
+  color: #dce4f9;
+  font-size: 14px;
+  line-height: 2;
+  white-space: pre-line;
+}
+
+.signature {
+  font-family: 'Playfair Display', serif;
+  font-style: italic;
+  color: var(--blue);
+  font-size: 23px;
+  margin-top: 25px;
+}
+
+.gallery {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 13px;
+  margin-top: 24px;
+}
+
+.photo {
+  min-height: 190px;
+  aspect-ratio: 4 / 5;
+  border-radius: 15px;
+  overflow: hidden;
+  border: 1px solid #c1d2ff28;
+  background: linear-gradient(145deg, #26385d, #111a31);
+  position: relative;
+}
+
+.photo img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform .6s;
+}
+
+.photo:hover img { transform: scale(1.04); }
+
+.photo .placeholder {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 12px;
+  color: #b8c9f3;
+  font-size: 12px;
+  line-height: 1.8;
+}
+
+.photo.has-image .placeholder { display: none; }
+
+.quote {
+  font-family: 'Playfair Display', serif;
+  font-style: italic;
+  font-size: 22px;
+  line-height: 1.8;
+  color: #dce7ff;
+}
+
+.hidden-message {
+  display: none;
+  margin-top: 25px;
+  padding: 22px;
+  border-radius: 15px;
+  background: #c4d8ff0d;
+  border: 1px solid #c4d8ff28;
+  line-height: 2;
+  color: #e0e8fc;
+  animation: appear .7s ease;
+}
+
+@keyframes appear {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.music-note {
+  font-size: 40px;
+  margin: 15px 0;
+}
+
+footer {
+  text-align: center;
+  padding: 45px 10px 10px;
+  color: var(--muted);
+  font-size: 11px;
+  letter-spacing: 2px;
+  line-height: 2;
+}
+
+@media (max-width: 480px) {
+  main { padding: 22px 15px 45px; }
+  .hero { min-height: 78vh; }
+  .moon { width: 78px; height: 78px; }
+  .photo { min-height: 150px; }
+}
+</style>
+</head>
+
+<body>
+<div id="stars"></div>
+
+<main>
+  <nav>
+    <span class="brand">✦ M. T.</span>
+    <span>20 · 10 · 2026</span>
+  </nav>
+
+  <section class="hero">
+    <div class="moon"></div>
+    <p class="eyebrow">A little something for you</p>
+    <h1>For <em>Minh Trâm</em></h1>
+    <p class="subtitle">
+      Giữa hàng triệu ánh sáng trên bầu trời,<br>
+      mong cậu luôn tìm thấy ánh sáng của riêng mình.
+    </p>
+    <a href="#letter" class="btn primary">Mở món quà nhỏ ✧</a>
+  </section>
+
+  <section class="card" id="letter">
+    <div class="section-label">01 — A little letter</div>
+    <h2>Gửi Minh Trâm,</h2>
+    <div class="letter">Chúc cậu có một ngày 20/10 thật dịu dàng.
+
+Mong những ngày phía trước sẽ mang đến cho cậu thật nhiều niềm vui, những cuộc gặp gỡ đáng nhớ và những điều đẹp đẽ mà cậu xứng đáng nhận được.
+
+Nếu cuộc sống đôi lúc trở nên ồn ào, mong cậu vẫn giữ được một khoảng trời bình yên cho riêng mình. Không cần phải luôn mạnh mẽ, cũng chẳng cần lúc nào cũng hoàn hảo.
+
+Cứ là cậu thôi — một phiên bản rất riêng, không cần trở thành bất kỳ ai khác.
+
+Và mong rằng khi nhìn lại ngày hôm nay, cậu sẽ nhớ rằng đã có người dành chút thời gian để tạo nên món quà nhỏ này cho cậu.</div>
+    <div class="signature">Một lời chúc, dưới ánh trăng. ♡</div>
+  </section>
+
+  <section class="card">
+    <div class="section-label">02 — Little memories</div>
+    <h2>Những khung hình nhỏ</h2>
+    <p class="subtitle">
+      Mỗi bức ảnh là một khoảnh khắc riêng.
+      Hãy thay những ô bên dưới bằng ảnh của cậu nhé.
+    </p>
+
+    <div class="gallery">
+      <div class="photo">
+        <img src="assets/tram-1.jpg" alt="Minh Trâm 1"
+          onload="this.parentElement.classList.add('has-image')"
+          onerror="this.style.display='none'">
+        <div class="placeholder">✧<br>Ảnh kỷ niệm 01<br>assets/tram-1.jpg</div>
+      </div>
+      <div class="photo">
+        <img src="assets/tram-2.jpg" alt="Minh Trâm 2"
+          onload="this.parentElement.classList.add('has-image')"
+          onerror="this.style.display='none'">
+        <div class="placeholder">✧<br>Ảnh kỷ niệm 02<br>assets/tram-2.jpg</div>
+      </div>
+      <div class="photo">
+        <img src="assets/tram-3.jpg" alt="Minh Trâm 3"
+          onload="this.parentElement.classList.add('has-image')"
+          onerror="this.style.display='none'">
+        <div class="placeholder">✧<br>Ảnh kỷ niệm 03<br>assets/tram-3.jpg</div>
+      </div>
+      <div class="photo">
+        <img src="assets/tram-4.jpg" alt="Minh Trâm 4"
+          onload="this.parentElement.classList.add('has-image')"
+          onerror="this.style.display='none'">
+        <div class="placeholder">✧<br>Ảnh kỷ niệm 04<br>assets/tram-4.jpg</div>
+      </div>
+    </div>
+  </section>
+
+  <section class="card" style="text-align:center">
+    <div class="section-label">03 — A song for you</div>
+    <div class="music-note">♫</div>
+    <h2>Em Có Chờ</h2>
+    <p class="subtitle" style="margin:0 auto 22px">
+      Một giai điệu dành cho ngày đặc biệt này.
+      Nhấn bên dưới để nghe bài hát của MIN.
+    </p>
+    <a class="btn primary"
+       href="https://www.youtube.com/results?search_query=MIN+Em+C%C3%B3+Ch%E1%BB%9D+official"
+       target="_blank" rel="noopener noreferrer">
+      Nghe bài hát ♪
+    </a>
+    <p class="subtitle" style="margin:18px auto 0;font-size:11px">
+      Nhạc sẽ mở trên YouTube.
+    </p>
+  </section>
+
+  <section class="card" style="text-align:center">
+    <div class="section-label">04 — One last thing</div>
+    <h2>Một điều bí mật...</h2>
+    <p class="subtitle" style="margin:0 auto 24px">
+      Có một lời chúc nhỏ vẫn đang chờ cậu mở ra.
+    </p>
+    <button class="btn" id="reveal">Mở lời nhắn ♡</button>
+
+    <div class="hidden-message" id="secret">
+      Mong cậu luôn có đủ dũng khí để theo đuổi điều mình yêu,
+      đủ bình yên để tận hưởng những gì đang có,
+      và đủ may mắn để gặp được thật nhiều người tử tế.
+
+      <br><br>
+      Chúc Minh Trâm một ngày 20/10 thật đáng nhớ. ✨
+      <br>
+      <span style="color:#a8c8ff">You deserve beautiful things.</span>
+    </div>
+  </section>
+
+  <footer>
+    MADE WITH CARE · FOR MINH TRÂM<br>
+    <span style="font-size:19px;color:#a8c8ff">☾</span><br>
+    20.10.2026
+  </footer>
+</main>
+
+<script>
+const starField = document.getElementById('stars');
+
+for (let i = 0; i < 90; i++) {
+  const star = document.createElement('span');
+  star.className = 'star';
+
+  const size = Math.random() * 2.5 + 1;
+  star.style.width = size + 'px';
+  star.style.height = size + 'px';
+  star.style.left = Math.random() * 100 + '%';
+  star.style.top = Math.random() * 100 + '%';
+  star.style.animationDelay = Math.random() * 4 + 's';
+  star.style.animationDuration = (2 + Math.random() * 4) + 's';
+
+  starField.appendChild(star);
+}
+
+document.getElementById('reveal').addEventListener('click', function () {
+  const message = document.getElementById('secret');
+  const isHidden = getComputedStyle(message).display === 'none';
+
+  message.style.display = isHidden ? 'block' : 'none';
+  this.textContent = isHidden ? 'Khép lời nhắn ✧' : 'Mở lời nhắn ♡';
+
+  if (isHidden) {
+    message.scrollIntoView({ behavior: 'smooth', block: 'center' });
+  }
+});
+</script>
+</body>
+</html>
